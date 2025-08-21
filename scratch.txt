@@ -1,6 +1,8 @@
 Tu run karaf with the some excluded classes from a bat file we need to ,modify the actual java command lione to add 
 
--Dglowroot.weaving.excludeClasses=".*/PaxWebServletHandler|.*/PaxWebServletContextHandler|com/axiossystems/integration/camelutils/servlet/adapters/.*" ^
+-Dglowroot.weaving.excludeClasses="org/ops4j/pax/web/service/jetty/internal/.*" ^
+
+We only need to exlcude the adapaters if the glowroot PR for jakarat+javax compatibility isn't accepted
 
 We can't use setenv due to the number of times EXTRA_JAVA_OPTS is expannded and concatenated (or at least I got bored
 of trying to figure out how to do it)
